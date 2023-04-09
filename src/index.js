@@ -32,18 +32,18 @@ function showOnScreen(arreyOfCountries) {
   if (arreyOfCountries.length >= 10) {
       inputEl.style.backgroundColor='rgb(10, 208, 238)'
         Notiflix.Notify.info('Too many matches found. Please enter a more specific name.');
-  } else if (arreyOfCountries.length === 1) {
+  }
+  else if (arreyOfCountries.length === 1) {
     inputEl.style.backgroundColor='#a2f19b'
       makeMarkupCountriesList(arreyOfCountries, classForNameOneCountry);
       makeMarkupCountryInfo(arreyOfCountries);
-    }else 
-      if (arreyOfCountries.length >= 2 && arreyOfCountries.length < 10) {
+  }
+  else if (arreyOfCountries.length >= 2 && arreyOfCountries.length < 10) {
         makeMarkupCountriesList(arreyOfCountries)
         inputEl.style.backgroundColor = '#dceb5c';
         countryInfo.innerHTML=''
     }
 }
-
 
 function makeMarkupCountriesList(arreyOfCountries, classForNameOneCountry) {
   let markupCountiesList = ''
@@ -69,3 +69,4 @@ function makeMarkupCountryInfo(arreyOfCountries) {
      }, '')
         countryInfo.innerHTML = markupCountryInfo;
 }
+
