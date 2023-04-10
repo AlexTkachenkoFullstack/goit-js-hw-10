@@ -23,6 +23,8 @@ function handleOnInputEl(event) {
   return fetchCountries(valueOfInputEl)
     .then(showOnScreen)
     .catch(() => {
+       countryInfo.innerHTML = '';
+    countryListEl.innerHTML = '';
       inputEl.style.backgroundColor = 'rgb(241, 121, 121)';
        Notiflix.Notify.failure('Oops, there is no country with that name')
     })
@@ -30,7 +32,8 @@ function handleOnInputEl(event) {
 
 function showOnScreen(arreyOfCountries) {
   if (arreyOfCountries.length >= 10) {
-      inputEl.style.backgroundColor='rgb(10, 208, 238)'
+    inputEl.style.backgroundColor = 'rgb(10, 208, 238)';
+   
         Notiflix.Notify.info('Too many matches found. Please enter a more specific name.');
   }
   else if (arreyOfCountries.length === 1) {
