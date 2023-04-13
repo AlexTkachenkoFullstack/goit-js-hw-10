@@ -17,7 +17,7 @@ function handleOnInputEl(event) {
   if (valueOfInputEl === '') {
     countryListEl.innerHTML = '';
     countryInfo.innerHTML = '';
-    inputEl.style.backgroundColor='#fafafa'
+    inputEl.style.backgroundColor = '#fafafa';
         return
     }
   return fetchCountries(valueOfInputEl)
